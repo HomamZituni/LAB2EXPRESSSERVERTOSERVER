@@ -2,7 +2,9 @@ const express = require('express');
 const axios = require('axios');
 
 const app = express();
-const PORT = 3000;
+
+
+const PORT = process.env.PORT || 3000;
 
 app.get('/api/fun-fact', async (req, res) => {
   try {
@@ -15,7 +17,7 @@ app.get('/api/fun-fact', async (req, res) => {
   }
 });
 
+
 app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
-  console.log(`Test your API at http://localhost:${PORT}/api/fun-fact`);
+  console.log(`Server running on port ${PORT}`);
 });
